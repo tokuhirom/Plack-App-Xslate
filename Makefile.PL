@@ -2,8 +2,8 @@ use inc::Module::Install;
 name 'Plack-App-Xslate';
 all_from 'lib/Plack/App/Xslate.pm';
 
-# requires '';
-
+requires 'Plack'        => 0.9946;
+requires 'Text::Xslate' => 0.2001;
 
 readme_markdown_from 'lib/Plack/App/Xslate.pm';
 tests 't/*.t t/*/*.t t/*/*/*.t t/*/*/*/*.t';

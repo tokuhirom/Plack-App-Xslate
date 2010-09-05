@@ -1,14 +1,22 @@
 # NAME
 
-Plack::App::Xslate -
+Plack::App::Xslate - Xslate for Plack
 
 # SYNOPSIS
 
-  use Plack::App::Xslate;
+    use Plack::App::Xslate;
+
+    my $app = Plack::App::Xslate->new(
+        path   => ['.'],
+        cache  => 1,
+        module => [qw/JSON/],
+    );
 
 # DESCRIPTION
 
-Plack::App::Xslate is
+Plack::App::Xslate is Xslate for Plack.
+
+All arguments for __new__ constructor is passed to Text::Xslate->new().
 
 # AUTHOR
 
