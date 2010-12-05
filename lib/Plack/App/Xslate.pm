@@ -9,6 +9,7 @@ use Plack::Util::Accessor qw/xslate content_type/;
 
 use Plack::Request;
 use Text::Xslate;
+use Encode;
 
 sub new {
     my $class = shift;
@@ -25,6 +26,7 @@ sub call {
     my ($self, $env) = @_;
     my $req = Plack::Request->new($env);
     my $out = $self->xslate->render($env->{PATH_INFO}, {r => $req});
+    $out = Encode::encode_utf8($out);
 
     return [
         200,
